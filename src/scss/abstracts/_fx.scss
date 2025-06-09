@@ -1,0 +1,54 @@
+@use "colours" as *;
+@use "abstracts" as *;
+
+$offset-zero: 0 0;
+$offset-right: 0.25rem 0.25rem;
+
+$box-shadow: $offset-zero 0.5rem rgba(0, 0, 0, 0.5);
+$box-shadow-light: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+$box-shadow-medium: $offset-zero $size-6 rgba(0, 0, 0, 0.5);
+
+$box-shadow-accent-small: 0 0 $size-4 $clr-accent-700;
+$box-shadow-accent-medium: 0 0 $size-8 $clr-accent-600;
+
+$box-shadow-primary-small: 0 0 $size-4 $clr-primary-700;
+$box-shadow-primary-medium: 0 0 $size-8 $clr-primary-600;
+
+$box-shadow-error-small: 0 0 $size-4 $clr-error;
+$box-shadow-error-medium: 0 0 $size-8 $clr-error;
+
+$animation-length-short: 0.3s;
+$animation-length-medium: 0.5s;
+$animation-length-long: 1s;
+
+$outline-accent-small: 1px solid $clr-primary-accent;
+$outline-accent: 3px solid $clr-primary-accent;
+
+$outline-primary-small: 1px solid $clr-primary;
+$outline-primary: 3px solid $clr-primary;
+
+$outline-small: 1px solid currentColor;
+$outline: 3px solid currentColor;
+
+$outline-small-dashed: 1px dashed currentColor;
+$outline-dashed: 3px dashed currentColor;
+
+
+@keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(3deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-3deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  

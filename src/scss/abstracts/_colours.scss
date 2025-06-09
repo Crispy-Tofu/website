@@ -1,0 +1,108 @@
+@use 'sass:map';
+
+$colours-primary: (
+	'100': hsl(275,60%, 23%),
+	'150': hsl(274,60%, 17%),
+	'200': hsl(273,60%, 20%),
+	'250': hsl(273,60%, 25%),
+	'300': hsl(273,60%, 30%),
+	'400': hsl(273,60%, 40%),
+	'500': hsl(273,60%, 50%),
+	'600': hsl(273,60%, 60%),
+	'700': hsl(273,60%, 70%),
+	'800': hsl(273,60%, 80%),
+	'850': hsl(273,60%, 85%),
+	'900': hsl(273,60%, 90%),
+	'950': hsl(273,60%, 95%)
+);
+$colours-accent: (
+	'100': hsl(43, 100%, 10%),
+	'200': hsl(43, 100%, 20%),
+	'300': hsl(43, 100%, 30%),
+	'400': hsl(43, 100%, 40%),
+	'500': hsl(43, 100%, 50%),
+	'600': hsl(43, 100%, 60%),
+	'700': hsl(43, 100%, 70%),
+	'800': hsl(43, 100%, 80%),
+	'900': hsl(43, 100%, 90%)
+);
+$colours-neutral: (
+	'100': hsl(273, 0%, 10%),
+	'200': hsl(273, 0%, 20%),
+	'300': hsl(273, 0%, 30%),
+	'400': hsl(273, 0%, 40%),
+	'500': hsl(273, 0%, 50%),
+	'600': hsl(273, 0%, 60%),
+	'700': hsl(273, 0%, 70%),
+	'800': hsl(273, 0%, 80%),
+	'900': hsl(273, 0%, 90%)
+);
+
+
+$clr-primary-100: map.get($colours-primary, '100');
+$clr-primary-150: map.get($colours-primary, '150');
+$clr-primary-200: map.get($colours-primary, '200');
+$clr-primary-250: map.get($colours-primary, '250');
+$clr-primary-300: map.get($colours-primary, '300');
+$clr-primary-400: map.get($colours-primary, '400');
+$clr-primary-500: map.get($colours-primary, '500');
+$clr-primary-600: map.get($colours-primary, '600');
+$clr-primary-700: map.get($colours-primary, '700');
+$clr-primary-800: map.get($colours-primary, '800');
+$clr-primary-850: map.get($colours-primary, '850');
+$clr-primary-900: map.get($colours-primary, '900');
+$clr-primary-950: map.get($colours-primary, '950');
+
+$clr-accent-100: map.get($colours-accent, '100');
+$clr-accent-200: map.get($colours-accent, '200');
+$clr-accent-300: map.get($colours-accent, '300');
+$clr-accent-400: map.get($colours-accent, '400');
+$clr-accent-500: map.get($colours-accent, '500');
+$clr-accent-600: map.get($colours-accent, '600');
+$clr-accent-700: map.get($colours-accent, '700');
+$clr-accent-800: map.get($colours-accent, '800');
+$clr-accent-900: map.get($colours-accent, '900');
+
+$clr-neutral-100: map.get($colours-neutral, '100');
+$clr-neutral-200: map.get($colours-neutral, '200');
+$clr-neutral-300: map.get($colours-neutral, '300');
+$clr-neutral-400: map.get($colours-neutral, '400');
+$clr-neutral-500: map.get($colours-neutral, '500');
+$clr-neutral-600: map.get($colours-neutral, '600');
+$clr-neutral-700: map.get($colours-neutral, '700');
+$clr-neutral-800: map.get($colours-neutral, '800');
+$clr-neutral-900: map.get($colours-neutral, '900');
+
+@for $i from 1 through 10 {
+	.clr-primary-#{$i} {
+		color: hsl(273, 66%, $i * 10%);
+	}
+}
+
+
+//DARK
+$dark-background-1: map.get($colours-primary, 'clr-primary-100');
+$dark-background-2: map.get($colours-primary, 'clr-primary-200');
+
+
+
+
+
+$clr-primary-muted-dark-100: hsl(273, 20%, 10%);
+$clr-primary-muted-dark-150: hsl(273, 20%, 15%);
+
+//LIGHT
+$clr-primary-muted-light-100: hsl(273, 20%, 90%);
+$clr-primary-muted-light-150: hsl(273, 20%, 85%);
+
+$light-background-1: map.get($colours-primary, 'clr-primary-800');
+$light-background-2: map.get($colours-primary, 'clr-primary-900');
+
+
+//PRIMARY
+$clr-primary: map.get($colours-primary, '400');
+$clr-primary-accent: hsl(43, 100%, 66%);
+
+
+// ERROR
+$clr-error:  hsl(0, 94%, 65%);

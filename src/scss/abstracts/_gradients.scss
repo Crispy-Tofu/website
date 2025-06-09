@@ -1,0 +1,16 @@
+@use "./colours" as *;
+
+$background-gradient-dark:
+  $clr-primary-muted-dark-150,
+  $clr-primary-muted-dark-100
+;
+
+$background-gradient-medium:
+  $clr-primary-850,
+  $clr-primary-800
+;
+
+$background-gradient-light:
+  $clr-primary-850,
+  $clr-primary-muted-light-100
+;

@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-items: center;
+    align-items: center;
+    padding: $size-6;
+}
+
+
+  
+  .flow > * + * {
+    margin-top: $spacer-medium;
+  }
+  

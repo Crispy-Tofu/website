@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "abstracts" as *;
+
+// for creating utility classes
+
+$fs-xs: $size-1;
+$fs-small: $size-2;
+$fs-regular: $size-4;
+$fs-large: $size-6;
+$fs-xl: $size-8;

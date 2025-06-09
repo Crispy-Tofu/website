@@ -1,0 +1,209 @@
+// RESET
+
+@use "./abstracts" as *;
+@forward "./abstracts";
+
+@use "./layout" as *;
+@forward "./layout";
+
+@use "./components" as *;
+@forward "./components";
+
+@font-face {
+  font-family: "Dutch";
+  src: url("/fonts/DUTCH.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Dutch_Bold";
+  src: url("/fonts/DUTCHB.TTF");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  
+  color-scheme: light-dark;
+  --theme-clr-background: white;
+  --theme-clr-text: hsl(273, 0%, 10%);
+}
+
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-see-through: hsl(273, 80%, 98%);
+    background-color: white;
+    color: $clr-neutral-100;
+    --theme-clr-background: white;
+    --theme-clr-text: hsl(273, 0%, 10%);
+
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    background-color: hsl(273, 0%, 10%);
+    --background-see-through: hsl(273, 10%, 10%);
+    color: white;
+    --theme-clr-background: hsl(273, 0%, 10%);
+    --theme-clr-text: white;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  margin: 0;
+  font-family: system-ui;
+  min-height: 100vh;
+  text-align: center;
+  color: inherit;
+  
+
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  text-align: center;
+  font-family: Dutch, system-ui, serif;
+}
+
+p,
+li {
+  text-wrap: pretty;
+  max-width: 65ch;
+  margin-inline: auto;
+  font-family: serif;
+
+  font-size: $fs-regular;
+  line-height: 1.6;
+}
+
+p {
+  text-align: justify;
+
+}
+
+li {
+  text-align: left;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+
+main {
+  max-width: $max-width;
+  margin: auto;
+}
+
+section {
+  margin-block: clamp(1.5rem, 7.5vh, 3rem)
+}
+
+.text-container {
+  display: block;
+  margin-inline: auto;
+  text-align: justify;
+
+  width: min($max-width, 90%);
+}
+
+
+
+.inverse {
+  color: $clr-neutral-200;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: calc($size-1 / 1.5);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus,
+a:focus-visible {
+  outline: none;
+}
+
+.inverse-link {
+  color: white;
+  text-decoration: underline;
+}
+
+.link-card > * {
+  max-width: 60ch;
+}
+
+.close-button {
+  position: absolute;
+  border-radius: 0.25rem;
+  top: 2%;
+  right: 2%;
+
+  background-color: white;
+  padding: 0.4rem 0.2rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+  box-shadow: $box-shadow-light;
+}
+
+.close-button-x {
+  pointer-events: none;
+}
+
+.close-button-x > * {
+  stroke: $clr-primary-100;
+  fill: $clr-primary-100;
+}
+
+.close-button:hover,
+.close-button:active,
+.close-button:focus-visible
+.close-button:focus-within {
+  outline: $outline-accent;
+}
+
