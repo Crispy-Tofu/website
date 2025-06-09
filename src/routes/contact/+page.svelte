@@ -48,6 +48,7 @@
 					<form
 						method="post"
 						action="?/submitForm"
+						netlify
 					
 						aria-label="Reparatie aanmelden"
 						use:enhance={loadingFunc}
