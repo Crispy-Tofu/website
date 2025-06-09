@@ -48,14 +48,13 @@
 					<form
 						method="post"
 						action="?/submitForm"
-						netlify
+						data-netlify='true'
 					
 						aria-label="Reparatie aanmelden"
 						use:enhance={loadingFunc}
 						class='contact-form'
 					>
 
-						<input type="hidden" name="form-name" value="contact-form" >
 					  <div class="question-wrapper">
 						<label for="name">Naam:</label>
 						<input
