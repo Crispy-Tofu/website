@@ -54,7 +54,7 @@
 						class='contact-form'
 					>
 
-						
+						<input type="hidden" name="form-name" value="contact-form" >
 					  <div class="question-wrapper">
 						<label for="name">Naam:</label>
 						<input
