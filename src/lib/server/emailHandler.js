@@ -14,8 +14,8 @@ import nodemailer from 'nodemailer';
       port: 465,
       secure: true,
       auth: {
-        user: process.env.USER,
-        pass: process.env.PASSWORD,
+        user: import.meta.env.USER,
+        pass: import.meta.env.PASSWORD,
       },
       tls: {
         rejectUnauthorized: false,
