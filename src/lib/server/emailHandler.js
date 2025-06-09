@@ -14,8 +14,8 @@ import nodemailer from 'nodemailer';
       port: 465,
       secure: true,
       auth: {
-        user: "info@solelectronics.nl",
-        pass: 'ZJHf0fEEHkWd2cxrKaOo',
+        user: import.meta.env.USER,
+        pass: import.meta.env.PASSWORD,
       },
       tls: {
         rejectUnauthorized: false,
