@@ -5,7 +5,6 @@
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import '../../scss/global.scss'
 
-	export const prerender = true;
 	const title = 'Contact';
 
 	let { form }: any = $props();
