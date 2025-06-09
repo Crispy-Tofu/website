@@ -3,8 +3,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import type { PageProps } from '../$types';
 	import '../../scss/global.scss'
+
+	export const prerender = true;
 	const title = 'Contact';
 
 	let { form }: any = $props();
@@ -19,6 +20,7 @@
       	await update()
     }
 	}
+
 
 </script>
 
