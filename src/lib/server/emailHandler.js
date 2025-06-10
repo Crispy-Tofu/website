@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
   
   async function sendEmail(data) {
 
-    const naam = data.get('name');
+    const naam = data.get('naam');
     const email = data.get('email');
     const apparaat = data.get('apparaat');
     const defect = data.get('probleem');
