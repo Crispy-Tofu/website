@@ -37,115 +37,113 @@
 		</section>
 		<hr>
 		<section class="flow">
-				<div class="form-wrapper" id="reparatie-form">
-					<div class="form-description">
-					  <p>
-						Via dit formulier kun je direct een reparatie aanmelden. Ik neem dan via
-						email zo snel mogelijk contact met je op. Laat alsjeblieft ook een korte beschrijving van het probleem achter, dan kan ik
-						beter met je mee denken.
-					  </p>
+			<div class="form-wrapper" id="reparatie-form">
+				<div class="form-description">
+					<p>
+					Via dit formulier kun je direct een reparatie aanmelden. Ik neem dan via
+					email zo snel mogelijk contact met je op. Laat alsjeblieft ook een korte beschrijving van het probleem achter, dan kan ik
+					beter met je mee denken.
+					</p>
+				</div>
+
+				<form
+					method="post"
+					action="?/submitForm"			
+					aria-label="Reparatie aanmelden"
+					use:enhance={loadingFunc}
+					class='contact-form'
+				>
+
+					<div class="question-wrapper">
+					<label for="name">Naam:</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						value={(form?.naam && form.error) ? form?.naam : ""}
+						minlength="3"
+						autocomplete="off"
+						placeholder="Uw naam"
+						required
+						tabindex="0"
+					/>
 					</div>
-
-					<form
-						method="post"
-						action="?/submitForm"
-						data-netlify='true'
-					
-						aria-label="Reparatie aanmelden"
-						use:enhance={loadingFunc}
-						class='contact-form'
+					<div class="question-wrapper">
+					<label for="email">Email:</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						value={form?.email ?? ""}
+						autocomplete="off"
+						placeholder="Uw emailadres"
+						required
+						tabindex="0"
+					/>
+					</div>
+					<div class="question-wrapper">
+					<label for="app">Apparaat</label>
+					<input
+						type="text"
+						name="apparaat"
+						id="apparaat"
+						value={form?.apparaat ?? ""}
+						placeholder="Het defecte apparaat"
+						autocomplete="off"
+						required
+						tabindex="0"
+					/>
+					</div>
+					<div class="question-wrapper">
+					<label for="probleem">Probleem:</label>
+					<textarea
+						name="probleem"
+						id="probleem"
+						value={(form?.defect)?? ""}
+						placeholder="Een beschrijving van het defect"
+						autocomplete="off"
+						required
+						tabindex="0"></textarea>
+					</div>
+					<div>
+					<label class="ohnohoney" for="namehoney"></label>
+					<input
+						class="ohnohoney"
+						autocomplete="off"
+						type="text"
+						id="namehoney"
+						name="namehoney"
+						placeholder="Your name here"
+						tabindex="-1"
+					/>
+					<label class="ohnohoney" for="emailhoney"></label>
+					<input
+						class="ohnohoney"
+						autocomplete="off"
+						type="email"
+						id="emailhoney"
+						name="emailhoney"
+						placeholder="Your e-mail here"
+						tabindex="-1"
+					/>
+					</div>
+					<button class="submit-btn" id="form-submit" tabindex="0"
+					>Verstuur</button
 					>
-
-					  <div class="question-wrapper">
-						<label for="name">Naam:</label>
-						<input
-						  type="text"
-						  name="name"
-						  id="name"
-						  value={(form?.naam && form.error) ? form?.naam : ""}
-						  minlength="3"
-						  autocomplete="off"
-						  placeholder="Uw naam"
-						  required
-						  tabindex="0"
-						/>
-					  </div>
-					  <div class="question-wrapper">
-						<label for="email">Email:</label>
-						<input
-						  type="email"
-						  name="email"
-						  id="email"
-						  value={form?.email ?? ""}
-						  autocomplete="off"
-						  placeholder="Uw emailadres"
-						  required
-						  tabindex="0"
-						/>
-					  </div>
-					  <div class="question-wrapper">
-						<label for="app">Apparaat</label>
-						<input
-						  type="text"
-						  name="apparaat"
-						  id="apparaat"
-						  value={form?.apparaat ?? ""}
-						  placeholder="Het defecte apparaat"
-						  autocomplete="off"
-						  required
-						  tabindex="0"
-						/>
-					  </div>
-					  <div class="question-wrapper">
-						<label for="probleem">Probleem:</label>
-						<textarea
-						  name="probleem"
-						  id="probleem"
-						  value={(form?.defect)?? ""}
-						  placeholder="Een beschrijving van het defect"
-						  autocomplete="off"
-						  required
-						  tabindex="0"></textarea>
-					  </div>
-					  <div>
-						<label class="ohnohoney" for="namehoney"></label>
-						<input
-						  class="ohnohoney"
-						  autocomplete="off"
-						  type="text"
-						  id="namehoney"
-						  name="namehoney"
-						  placeholder="Your name here"
-						  tabindex="-1"
-						/>
-						<label class="ohnohoney" for="emailhoney"></label>
-						<input
-						  class="ohnohoney"
-						  autocomplete="off"
-						  type="email"
-						  id="emailhoney"
-						  name="emailhoney"
-						  placeholder="Your e-mail here"
-						  tabindex="-1"
-						/>
-					  </div>
-					  <button class="submit-btn" id="form-submit" tabindex="0"
-						>Verstuur</button
-					  >
-					  
-					  {#if sent} 
-					  	<div class="message {form?.error ? 'error' : ''} {form?.success ? 'success' : ''} ">
-							{#if loading}
-					  			<p>Een moment geduld...</p>
-							{:else if form?.emailerror}
-								<p>Geef een juist emailadres op</p>
-							{:else if form?.telangerror}
-								<p>Het bericht was te lang, geef alsjeblieft een korte beschrijving van het defect.</p>
-							{:else if form?.success}
-								<p>Dankjewel, {form?.naam}. Ik neem zo snel mogelijk contact met je op!</p>
-							{/if}
-						</div>
+					
+					{#if sent} 
+					<div class="message {form?.error ? 'error' : ''} {form?.success ? 'success' : ''} ">
+						{#if loading}
+							<p>Een moment geduld...</p>
+						{:else if form?.emailerror}
+							<p>Geef een juist emailadres op</p>
+						{:else if form?.telangerror}
+							<p>Het bericht was te lang, geef alsjeblieft een korte beschrijving van het defect.</p>
+						{:else if form?.success}
+							<p>Dankjewel, {form?.naam}. Ik neem zo snel mogelijk contact met je op!</p>
 						{/if}
+					</div>
+					{/if}
 
 					</form>
 				  </div>
