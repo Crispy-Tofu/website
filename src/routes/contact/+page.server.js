@@ -11,7 +11,7 @@ export const actions = {
       return fail(400,{ }) 
     }
     
-    const naam = String(data.get('name'));
+    const naam = String(data.get('naam'));
     const email = String(data.get('email'));
     const apparaat = String(data.get('apparaat'));
     const defect = String(data.get('probleem'));
