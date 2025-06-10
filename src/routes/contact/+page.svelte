@@ -22,7 +22,13 @@
 
 
 </script>
-
+<!-- Voor netlify -->
+<form name='contact'  data-netlify='true' netlify-honeypot="bot-field" hidden>
+	<input type="text" name="name">
+	<input type="email" name="email">
+	<input type="text" name="apparaat">
+	<input type="text" name="probleem">
+</form>
 <main>
 	
 	<div class="wrapper">
@@ -48,12 +54,13 @@
 
 				<form
 					method="post"
-					action="?/submitForm"			
+					action="?/submitForm"
+					name="contact"			
 					aria-label="Reparatie aanmelden"
 					use:enhance={loadingFunc}
 					class='contact-form'
 				>
-
+					<input type="hidden" name="form-name" value="submitForm"> 
 					<div class="question-wrapper">
 					<label for="name">Naam:</label>
 					<input
