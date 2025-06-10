@@ -24,7 +24,7 @@
 </script>
 <!-- Voor netlify -->
 <form name='contact'  data-netlify='true' netlify-honeypot="bot-field" hidden>
-	<input type="text" name="name">
+	<input type="text" name="naam">
 	<input type="email" name="email">
 	<input type="text" name="apparaat">
 	<input type="text" name="probleem">
@@ -65,8 +65,8 @@
 					<label for="name">Naam:</label>
 					<input
 						type="text"
-						name="name"
-						id="name"
+						name="naam"
+						id="naam"
 						value={(form?.naam && form.error) ? form?.naam : ""}
 						minlength="3"
 						autocomplete="off"
