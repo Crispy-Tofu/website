@@ -242,6 +242,9 @@
       outline: $outline-accent-small;
 	  box-shadow: $box-shadow-primary-small;
     }
+	&:user-invalid {
+		box-shadow: $box-shadow-error-small;
+	}
   }
 
   input {
@@ -250,7 +253,7 @@
 
   textarea {
     width: min(30rem, 90%);
-    height: 4rem;
+    min-height: 4rem;
     max-height: 10rem;
     border: none;
 	resize: vertical;

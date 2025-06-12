@@ -1,27 +1,23 @@
 <script>
+    import { scale } from 'svelte/transition'
+    import { trapFocus } from '$lib/actions.svelte.js';
 
-import { scale} from 'svelte/transition'
+    let { theme } = $props();
 
+    let active = $state(false)
 
-let { theme} = $props();
+    function showInfo() {
+        active = true;
 
-let active = $state(false)
+        let el = document.querySelector('.info');
+        el?.scrollIntoView({block: 'center', behavior: 'smooth'})
 
+    }
 
-function showInfo() {
-    active = true;
-    let el = document.querySelector('.info');
-    el?.scrollIntoView({block: 'center', behavior: 'smooth'})
-    
-}
-
-
-function hideInfo() {    
-    active = false;
-
-
-}
-	
+    function hideInfo() {    
+        active = false;
+    }
+        
 
 
 
@@ -30,6 +26,7 @@ function hideInfo() {
 
 <div class="wrapper"
      role="button" 
+     id='openModal'
      onclick={showInfo} 
      onkeydown={(e) => {
         if (e.key === "Enter" || e.key === " "){
@@ -40,14 +37,14 @@ function hideInfo() {
 </div>
 
 {#if active}
-<div class="info"  transition:scale>
+<div class="info" id='modal' use:trapFocus transition:scale>
     <div
     class="close-button"
     role="button"
     tabindex="{active ? 0 : -1 }"
     onclick={hideInfo}
     onkeydown={(e) =>{
-    if (e.key === "Enter" || e.key === " "){
+    if (e.key === "Enter" || e.key === " " || e.key === "Escape"){
     hideInfo()}}}
 >
     <svg
@@ -65,7 +62,7 @@ function hideInfo() {
         ></path>
         </svg>
     </div>
-    <p id={theme.name.toLowerCase()}>{theme.text}</p>
+    <p id={theme.name.toLowerCase()}  >{theme.text}</p>
 
 </div>
 {/if}
@@ -105,6 +102,10 @@ p {
     position: absolute;
     inset: -1.5rem;
 
+
+    border: none;
+    outline: none;
+
     color: $clr-neutral-100;
     border-radius: $border-radius-small;
     padding: $size-8;
@@ -113,7 +114,10 @@ p {
     justify-content: center;
     align-items: center;
 
+    background: transparent;
+
     backdrop-filter: blur(2px) saturate(20%);
+
 
     & p {
         text-align: justify;
@@ -125,8 +129,11 @@ p {
         box-shadow: $box-shadow-primary-medium;
 
     }
- 
+
 }
+
+
+
 
 @container themas (width < 710px) {
     .close-button {

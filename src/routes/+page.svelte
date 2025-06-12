@@ -129,6 +129,8 @@
 			align-items: center;
 			gap: 1rem;
 			height: auto;
+			box-shadow: none;
+			outline: none;
 		}
 	}
 
