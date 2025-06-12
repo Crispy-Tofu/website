@@ -202,6 +202,7 @@ a:focus-visible {
 
 .close-button:hover,
 .close-button:active,
+.close-button:focus,
 .close-button:focus-visible
 .close-button:focus-within {
   outline: $outline-accent;
