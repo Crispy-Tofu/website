@@ -111,23 +111,38 @@
 
 
 	@media screen and (max-width: 600px) {
+
+		.nav {
+			align-items: normal;
+		}
+
 		ul {
 			z-index: 1;
 			gap: $size-2;
 			flex-direction: row;
-			justify-content: stretch;
-			align-content: stretch;
+			justify-content: center;
+			align-content: end;
 
-			position: absolute;
-			right: 2rem;
-			top: -1rem;
-			z-index: 1;
+			margin-right: 1rem;
+
+			// position: absolute;
+			// right: 2rem;
+			// top: 0rem;
+			// z-index: 1;
 		}
+
+		.hamburger {
+			// padding-top: .25rem;
+			padding-left: 1rem;
+			padding-right: 0;
+		}
+
 		.close {
 			position: absolute;
-			top: 10%;
-			right: .5rem;
-		}
+			top: 30%;
+			right: 0;
+		}		
+
 	}
 
 	@media screen and (max-width: 520px) {
@@ -142,6 +157,13 @@
 			top: -.6rem;
 			right: 0;
 			gap: $gap-small;
+
+			margin-right: 0rem;
+
+
+			position: absolute;
+
+			z-index: 1;
 		}
 
 		.hamburger {
@@ -149,7 +171,11 @@
 			padding-right: clamp(0.1rem, 1vw, 1rem);
 			padding-top: .25rem;
 		}
-
+		.close {
+			position: absolute;
+			top: 10%;
+			right: .5rem;
+		}
 
 		ul > * > * {
 			margin: 0;
