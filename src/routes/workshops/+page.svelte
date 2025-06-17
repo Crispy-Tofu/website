@@ -8,7 +8,7 @@
 <div class="wrapper">
 	<section>
 		<h2>Soldeerworkshop</h2>
-		<div class="flow">
+		<div class="flow text-container">
 
 		<p>
 			Tijdens de drie uur durende soldeerworkshop, bouwen we samen een kleine audioversterker. We
@@ -21,7 +21,7 @@
 	</section>
 	<section>
 		<h3>Hoe het werkt</h3>
-		<div class="flow">
+		<div class="flow text-container">
 		<p>
 			De workshop duurt ongeveer drie uur. Mocht je wat extra tijd nodig hebben, dan is er altijd
 			ruimte voor een beetje uitloop. Omdat ik workshops moet voorbereiden en alles in huis moeten

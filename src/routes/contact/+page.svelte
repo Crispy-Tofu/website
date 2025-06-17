@@ -23,12 +23,7 @@
 
 </script>
 <!-- Voor netlify -->
-<form name='contact'  data-netlify='true' netlify-honeypot="bot-field" hidden>
-	<input type="text" name="naam">
-	<input type="email" name="email">
-	<input type="text" name="apparaat">
-	<input type="text" name="probleem">
-</form>
+
 <main>
 	
 	<div class="wrapper">
